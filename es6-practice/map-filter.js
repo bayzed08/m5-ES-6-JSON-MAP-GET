@@ -18,6 +18,10 @@ const output = [];
 // console.log(NumsArray);
 // console.log(doubleNumsArray);
 
-const filterNumsArray=NumsArray.filter(a=> a*a>20 )
+const filterNumsArray = NumsArray.filter(a => a * a < 20);
 console.log(NumsArray);
 console.log(filterNumsArray);
+
+const findNumsArray = NumsArray.find(a => a < 5); // first find element with condition
+console.log(NumsArray);
+console.log(findNumsArray);
