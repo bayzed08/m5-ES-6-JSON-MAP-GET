@@ -15,3 +15,15 @@
     color: blue;
     font-weight: bolder;
 }
+
+#country-details img{
+width: 400px;
+height: 300px;
+}
+.countryCSS{
+    text-align: center;
+    border: 2px solid bisque;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+}

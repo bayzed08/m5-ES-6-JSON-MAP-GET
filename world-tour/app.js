@@ -19,9 +19,29 @@ const displayCountries = countries => {
         countryInfo = `
         <h2 class="country-name">${country.name}</h2>
         <p class="country-capital">${country.capital}</p>
+        <button onclick="displayCountryDetails('${country.name}')">Details</button>
         `
         countrydiv.innerHTML = countryInfo;
         countriesdiv.appendChild(countrydiv);
     }
-
+}
+const displayCountryDetails = countryName => {
+    const url = `https://restcountries.eu/rest/v2/name/${countryName}`;
+    //console.log(url);
+    fetch(url)
+        .then(response => response.json())
+        .then(data => renderCountryinfo(data[0]));
+}
+const renderCountryinfo = country => {
+    console.log(country);
+    const countryDiv = document.getElementById('country-details');
+    countryDiv.innerHTML = `
+    <div class="countryCSS">
+         <h1>${country.name}</h1>
+         <p>population: ${country.population}</p>
+         <p>Area: ${country.area}</p>
+         <p>Region Area: ${country.region}</p>
+         <p> Time Zone: ${country.timezones}</p>
+         <img src=${country.flag} alt=${country.name}>
+    </div>`;
 }
